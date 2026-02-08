@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>A Little Gift</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- BODY ---------- */
+body {
+    min-height: 100vh;
+    font-family: 'Playfair Display', serif;
+
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("https://static.vecteezy.com/system/resources/previews/024/200/438/non_2x/various-chocolate-background-vector.jpg")
+        center / cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;       /* ✅ scrolling enabled */
+    padding: 80px 20px;     /* ✅ breathing space */
+}
+
+/* ---------- CARD ---------- */
+.card {
+    background: rgba(255,255,255,0.20);
+    backdrop-filter: blur(18px);
+    padding: 80px;
+    border-radius: 28px;
+    width: 100%;
+    max-width: 820px;
+    text-align: center;
+    box-shadow: 0 35px 70px rgba(0,0,0,0.4);
+}
+
+/* ---------- TITLE ---------- */
+h1 {
+    font-size: 2.6rem;
+    color: #f4dcc6;
+    margin-bottom: 20px;
+}
+
+/* ---------- SUBTITLE ---------- */
+.subtitle {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.4rem;
+    color: #4b2412;
+    margin-bottom: 48px;
+}
+
+/* ---------- MESSAGE ---------- */
+.message p {
+    font-size: 1.28rem;
+    color: #5a2c16;
+    line-height: 2.1;
+    max-width: 700px;
+    margin: 0 auto 36px;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 1.4s ease, transform 1.4s ease;
+}
+
+/* ---------- HANDWRITTEN HIGHLIGHT ---------- */
+.highlight {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.1rem;
+    color: #3f1e10;
+}
+
+/* ---------- SIGNATURE LINE ---------- */
+.signature {
+    margin-top: 55px;
+    font-size: 1.35rem;
+    color: #3a1e12;
+    letter-spacing: 0.6px;
+}
+
+/* ---------- DIVIDER ---------- */
+.divider {
+    margin: 60px auto 24px;
+    width: 120px;
+    height: 1px;
+    background: rgba(75, 36, 18, 0.4);
+}
+
+/* ---------- NAVIGATION ---------- */
+.next-hint {
+    font-size: 1.15rem;
+    color: #4b2412;
+    margin-bottom: 14px;
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 1.05rem;
+    color: #6f3c22;
+    text-decoration: none;
+    letter-spacing: 0.4px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>A Little Gift</h1>
+    <div class="subtitle">Just for you</div>
+
+    <div class="message">
+        <p>Happy Chocolate Day! You remind me so much of chocolate—sweet, comforting, and always leaving a lasting impression.</p>
+
+        <p>I really admire how emotionally intelligent and mature you are; it’s inspiring to see someone who carries strength so gracefully.</p>
+
+        <p>On the outside, you seem strong and confident, yet there’s such a gentle and cute side within that makes you truly special.</p>
+
+        <p class="highlight">You’re like a perfect blend of sweetness and strength.</p>
+
+        <p>Your eyes have a sparkle that feels calming, your hair flows beautifully, and your voice has a softness that’s always pleasant to hear.</p>
+
+        <p class="signature">It’s genuinely a joy to know you.</p>
+    </div>
+
+    <div class="divider"></div>
+    <div class="next-hint">There’s something else I wanted to share</div>
+    <a href="index.html" class="back-link">→ Go back to choices</a>
+</div>
+
+<script>
+const paragraphs = document.querySelectorAll(".message p");
+
+paragraphs.forEach((p, index) => {
+    setTimeout(() => {
+        p.style.opacity = "1";
+        p.style.transform = "translateY(0)";
+    }, index * 1600);
+});
+</script>
+
+</body>
+</html>

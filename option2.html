@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Extras</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- BODY ---------- */
+body {
+    min-height: 100vh;
+    font-family: 'Playfair Display', serif;
+
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("https://static.vecteezy.com/system/resources/previews/024/200/438/non_2x/various-chocolate-background-vector.jpg")
+        center / cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;          /* ✅ scroll enabled */
+    padding: 80px 20px;        /* ✅ breathing space */
+}
+
+/* ---------- CARD ---------- */
+.card {
+    background: rgba(255,255,255,0.20);
+    backdrop-filter: blur(18px);
+    padding: 80px;
+    border-radius: 28px;
+    width: 100%;
+    max-width: 820px;
+    text-align: center;
+    box-shadow: 0 35px 70px rgba(0,0,0,0.4);
+}
+
+/* ---------- TITLE ---------- */
+h1 {
+    font-size: 2.5rem;
+    color: #f4dcc6;
+    margin-bottom: 40px;
+}
+
+/* ---------- POEM ---------- */
+.poem {
+    font-size: 1.35rem;
+    color: #5a2c16;
+    line-height: 2.2;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* stanza spacing */
+.stanza {
+    margin-bottom: 36px;
+}
+
+/* ---------- END LINE ---------- */
+.end-line {
+    margin-top: 60px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: #3f1e10;
+}
+
+/* ---------- DIVIDER ---------- */
+.divider {
+    margin: 70px auto 24px;
+    width: 120px;
+    height: 1px;
+    background: rgba(75, 36, 18, 0.4);
+}
+
+/* ---------- NAVIGATION ---------- */
+.next-hint {
+    font-size: 1.15rem;
+    color: #4b2412;
+    margin-bottom: 14px;
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 1.05rem;
+    color: #6f3c22;
+    text-decoration: none;
+    letter-spacing: 0.4px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Extras</h1>
+
+    <div class="poem">
+        <div class="stanza">
+            Chocolate’s sweet, but you outshine,<br>
+            With eyes that sparkle, hair divine.<br>
+            Your voice could melt the hardest day,<br>
+            It makes the worries drift away.
+        </div>
+
+        <div class="stanza">
+            Strong outside, yet soft within,<br>
+            A gentle heart, where joys begin.<br>
+            Mature and bright, with playful grace,<br>
+            You bring a smile to every space.
+        </div>
+
+        <div class="stanza">
+            Like chocolate’s charm, you’re smooth and rare,<br>
+            A perfect blend beyond compare.<br>
+            Sweet and strong, both bold and cute,<br>
+            You’re the flavor I can’t dispute.
+        </div>
+    </div>
+
+    <div class="end-line">Happy Chocolate Day</div>
+
+    <!-- Navigation back -->
+    <div class="divider"></div>
+    <div class="next-hint">You can go back anytime</div>
+    <a href="index.html" class="back-link">→ Go back to choices</a>
+</div>
+
+</body>
+</html>
