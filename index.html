@@ -110,6 +110,38 @@ body {
     transform: scale(1.06);
     filter: brightness(1.1);
 }
+
+/* ---------- MOBILE RESPONSIVE TUNING ---------- */
+@media (max-width: 768px) {
+
+    body {
+        padding: 24px 12px;
+    }
+
+    .card {
+        padding: 36px 22px;
+        border-radius: 20px;
+    }
+
+    #typingText {
+        font-size: 1.8rem;
+        min-height: 90px;
+    }
+
+    #chocolateDayText {
+        font-size: 1.7rem;
+    }
+
+    .options-wrapper {
+        padding: 22px;
+        margin-top: 36px;
+    }
+
+    .option {
+        font-size: 1.05rem;
+        padding: 15px;
+    }
+}
 </style>
 </head>
 
@@ -153,7 +185,7 @@ function typeWords() {
         typeSound.currentTime = 0;
         typeSound.play();
         index++;
-        setTimeout(typeWords, 420); // ✅ tuned delay
+        setTimeout(typeWords, 420);
     } else {
         showAfterText();
     }
