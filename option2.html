@@ -26,8 +26,8 @@ body {
 
     display: flex;
     justify-content: center;
-    overflow-y: auto;          /* ✅ scroll enabled */
-    padding: 80px 20px;        /* ✅ breathing space */
+    overflow-y: auto;
+    padding: 80px 20px;
 }
 
 /* ---------- CARD ---------- */
@@ -58,7 +58,7 @@ h1 {
     margin: 0 auto;
 }
 
-/* stanza spacing */
+/* ---------- STANZA ---------- */
 .stanza {
     margin-bottom: 36px;
 }
@@ -97,6 +97,51 @@ h1 {
 .back-link:hover {
     text-decoration: underline;
 }
+
+/* ---------- MOBILE RESPONSIVE TUNING ---------- */
+@media (max-width: 768px) {
+
+    body {
+        padding: 40px 14px;
+    }
+
+    .card {
+        padding: 42px 24px;
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 2.1rem;
+        margin-bottom: 32px;
+    }
+
+    .poem {
+        font-size: 1.1rem;
+        line-height: 1.85;
+        max-width: 100%;
+    }
+
+    .stanza {
+        margin-bottom: 28px;
+    }
+
+    .end-line {
+        font-size: 1.8rem;
+        margin-top: 44px;
+    }
+
+    .divider {
+        margin: 50px auto 20px;
+    }
+
+    .next-hint {
+        font-size: 1.05rem;
+    }
+
+    .back-link {
+        font-size: 1rem;
+    }
+}
 </style>
 </head>
 
@@ -130,7 +175,6 @@ h1 {
 
     <div class="end-line">Happy Chocolate Day</div>
 
-    <!-- Navigation back -->
     <div class="divider"></div>
     <div class="next-hint">You can go back anytime</div>
     <a href="index.html" class="back-link">→ Go back to choices</a>
