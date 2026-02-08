@@ -26,8 +26,8 @@ body {
 
     display: flex;
     justify-content: center;
-    overflow-y: auto;       /* ✅ scrolling enabled */
-    padding: 80px 20px;     /* ✅ breathing space */
+    overflow-y: auto;
+    padding: 80px 20px;
 }
 
 /* ---------- CARD ---------- */
@@ -109,6 +109,56 @@ h1 {
 
 .back-link:hover {
     text-decoration: underline;
+}
+
+/* ---------- MOBILE RESPONSIVE TUNING ---------- */
+@media (max-width: 768px) {
+
+    body {
+        padding: 40px 14px;
+    }
+
+    .card {
+        padding: 42px 24px;
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 2.1rem;
+    }
+
+    .subtitle {
+        font-size: 2rem;
+        margin-bottom: 34px;
+    }
+
+    .message p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        max-width: 100%;
+        margin-bottom: 28px;
+    }
+
+    .highlight {
+        font-size: 1.8rem;
+    }
+
+    .signature {
+        font-size: 1.2rem;
+        margin-top: 40px;
+    }
+
+    .divider {
+        margin: 48px auto 20px;
+    }
+
+    .next-hint {
+        font-size: 1.05rem;
+    }
+
+    .back-link {
+        font-size: 1rem;
+    }
 }
 </style>
 </head>
