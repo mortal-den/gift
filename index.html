@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>A Choice</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- BODY ---------- */
+body {
+    height: 100vh;
+    font-family: 'Playfair Display', serif;
+
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("https://static.vecteezy.com/system/resources/previews/024/200/438/non_2x/various-chocolate-background-vector.jpg")
+        center / cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ---------- FADE OVERLAY ---------- */
+#fade {
+    position: fixed;
+    inset: 0;
+    background: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.8s cubic-bezier(0.4,0,0.2,1);
+    z-index: 10;
+}
+
+/* ---------- CARD ---------- */
+.card {
+    background: rgba(255,255,255,0.22);
+    backdrop-filter: blur(16px);
+    padding: 60px;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 640px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+    z-index: 2;
+}
+
+/* ---------- MAIN TYPING TEXT ---------- */
+#typingText {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #f9e7d6;
+    min-height: 110px;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- ITALIAN-STYLE TEXT ---------- */
+#chocolateDayText {
+    margin-top: 14px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: #4b2412;
+    opacity: 0;
+    transition: opacity 1.4s ease;
+}
+
+/* ---------- OPTIONS GLASS BOX ---------- */
+.options-wrapper {
+    margin-top: 55px;
+    display: none;
+    padding: 32px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(20px);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* ---------- OPTION BUTTON ---------- */
+.option {
+    padding: 18px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #6f3c22, #8b5233);
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: 0.7s ease;
+}
+
+.option:hover {
+    transform: scale(1.06);
+    filter: brightness(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<div id="fade"></div>
+
+<div class="card">
+    <div id="typingText"></div>
+    <div id="chocolateDayText">Happy Chocolate Day</div>
+
+    <div class="options-wrapper" id="optionsWrapper">
+        <div class="options">
+            <div class="option" onclick="goTo('option1.html')">A LITTLE GIFT</div>
+            <div class="option" onclick="goTo('option2.html')">EXTRAS</div>
+        </div>
+    </div>
+</div>
+
+<!-- Typing sound -->
+<audio id="typeSound" preload="auto">
+    <source src="https://assets.mixkit.co/sfx/preview/mixkit-typewriter-soft-1125.mp3">
+</audio>
+
+<script>
+const text = "For the smartest girl I know.....";
+const words = text.split(" ");
+let index = 0;
+
+const typingDiv = document.getElementById("typingText");
+const chocolateDayText = document.getElementById("chocolateDayText");
+const optionsWrapper = document.getElementById("optionsWrapper");
+const optionItems = document.querySelectorAll(".option");
+const typeSound = document.getElementById("typeSound");
+const fade = document.getElementById("fade");
+
+/* ---------- WORD-BY-WORD TYPING (OPTIMIZED) ---------- */
+function typeWords() {
+    if (index < words.length) {
+        typingDiv.innerHTML += words[index] + " ";
+        typeSound.currentTime = 0;
+        typeSound.play();
+        index++;
+        setTimeout(typeWords, 420); // ✅ tuned delay
+    } else {
+        showAfterText();
+    }
+}
+
+/* ---------- SHOW SECOND LINE & OPTIONS ---------- */
+function showAfterText() {
+    chocolateDayText.style.opacity = "1";
+
+    setTimeout(() => {
+        optionsWrapper.style.display = "block";
+        optionItems.forEach((opt, i) => {
+            setTimeout(() => {
+                opt.style.opacity = "1";
+                opt.style.transform = "translateY(0)";
+            }, i * 450);
+        });
+    }, 900);
+}
+
+/* ---------- FADE & NAVIGATION ---------- */
+function goTo(page) {
+    fade.style.opacity = "1";
+    setTimeout(() => {
+        window.location.href = page;
+    }, 1800);
+}
+
+typeWords();
+</script>
+
+</body>
+</html>
